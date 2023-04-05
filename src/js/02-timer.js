@@ -52,7 +52,7 @@ startBtn.addEventListener('click', () => {
 
     if (difference <= 0) {
       clearInterval(timerId);
-      console.log('timer is over');
+      Notify.success('timer is over');
     } else {
       days.textContent = convertMs(difference).days;
       hours.textContent = convertMs(difference).hours;
