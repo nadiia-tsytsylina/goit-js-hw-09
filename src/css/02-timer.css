@@ -1,5 +1,5 @@
 input {
-  margin-left: 90px;
+  margin-left: 130px;
   width: 300px;
   border: 1px solid lightsteelblue;
   border-radius: 4px;
@@ -35,7 +35,7 @@ button {
 .field {
   display: flex;
   flex-direction: column;
-  width: 130px;
+  width: 150px;
   font-weight: 500;
   text-align: center;
 }

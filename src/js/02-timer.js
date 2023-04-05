@@ -3,7 +3,6 @@ import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const flatpickr = require('flatpickr');
-
 const startBtn = document.querySelector('button[data-start]');
 const days = document.querySelector('.value[data-days]');
 const hours = document.querySelector('.value[data-hours]');
@@ -20,11 +19,11 @@ const makeButtonAble = btn => {
   btn.classList.add('active-btn');
 };
 
-makeButtonDisable(startBtn);
-
 const addLeadingZero = value => {
   return String(value).padStart(2, '0');
 };
+
+makeButtonDisable(startBtn);
 
 const options = {
   enableTime: true,
