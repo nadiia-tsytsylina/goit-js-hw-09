@@ -42,7 +42,7 @@ const options = {
 };
 
 makeButtonDisable(startBtn);
-flatpickr('#datetime-picker', options, {});
+flatpickr('#datetime-picker', options);
 
 startBtn.addEventListener('click', () => {
   makeButtonDisable(startBtn);
