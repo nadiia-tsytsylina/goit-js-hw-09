@@ -2,7 +2,6 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-// const flatpickr = require('flatpickr');
 const startBtn = document.querySelector('button[data-start]');
 const days = document.querySelector('.value[data-days]');
 const hours = document.querySelector('.value[data-hours]');
@@ -33,7 +32,7 @@ const options = {
     console.log(selectedDates[0]);
 
     if (selectedDates[0] < options.defaultDate) {
-      Notify.failure('Please choose the date in the future');
+      Notify.failure('Please choose a date in the future');
     } else {
       makeButtonAble(startBtn);
       selectedDate = selectedDates[0];
@@ -52,7 +51,7 @@ startBtn.addEventListener('click', () => {
 
     if (difference <= 0) {
       clearInterval(timerId);
-      Notify.success('timer is over');
+      Notify.success('timer is over. Please choose new date');
     } else {
       days.textContent = convertMs(difference).days;
       hours.textContent = convertMs(difference).hours;

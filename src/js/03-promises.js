@@ -19,10 +19,10 @@ function onSubmit(event) {
   for (let i = 1; i <= amountNum; i += 1) {
     createPromise(i, delayNum)
       .then(({ position, delay }) =>
-        Notify.success(`✅ Fulfilled a promise ${position} in ${delay}ms`)
+        Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
       )
       .catch(({ position, delay }) =>
-        Notify.failure(`❌ Rejected a promise ${position} in ${delay}ms`)
+        Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`)
       );
     delayNum += stepNum;
   }
