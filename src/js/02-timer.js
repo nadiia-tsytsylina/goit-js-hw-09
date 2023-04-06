@@ -51,7 +51,7 @@ flatpickr('#datetime-picker', {
     console.log(selectedDates[0]);
     // console.log(this.defaultDate);
 
-    if (selectedDates[0] < new Date()) {
+    if (selectedDates[0] < Date.now()) {
       Notify.failure('Please choose the date in the future');
     } else {
       makeButtonAble(startBtn);
