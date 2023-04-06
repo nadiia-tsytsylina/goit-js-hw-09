@@ -31,7 +31,7 @@ const options = {
   onClose(selectedDates) {
     console.log(selectedDates[0]);
 
-    if (selectedDates[0] < options.defaultDate) {
+    if (selectedDates[0] < Date.now()) {
       Notify.failure('Please choose a date in the future');
     } else {
       makeButtonAble(startBtn);
