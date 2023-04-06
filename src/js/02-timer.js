@@ -24,25 +24,41 @@ const addLeadingZero = value => {
   return String(value).padStart(2, '0');
 };
 
-const options = {
+// const options = {
+//   enableTime: true,
+//   time_24hr: true,
+//   defaultDate: new Date(),
+//   minuteIncrement: 1,
+//   onClose(selectedDates) {
+//     console.log(selectedDates[0]);
+
+//     if (selectedDates[0] < options.defaultDate) {
+//       Notify.failure('Please choose the date in the future');
+//     } else {
+//       makeButtonAble(startBtn);
+//       selectedDate = selectedDates[0];
+//     }
+//   },
+// };
+
+makeButtonDisable(startBtn);
+flatpickr('#datetime-picker', {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
     console.log(selectedDates[0]);
+    // console.log(this.defaultDate);
 
-    if (selectedDates[0] < options.defaultDate) {
+    if (selectedDates[0] < new Date()) {
       Notify.failure('Please choose the date in the future');
     } else {
       makeButtonAble(startBtn);
       selectedDate = selectedDates[0];
     }
   },
-};
-
-makeButtonDisable(startBtn);
-flatpickr('#datetime-picker', options);
+});
 
 startBtn.addEventListener('click', () => {
   makeButtonDisable(startBtn);
